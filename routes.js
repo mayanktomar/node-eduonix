@@ -1,5 +1,5 @@
 import express from "express";
-import { fetchAllDishesController, fetchDishByIdController, insertDishController, updateDishController } from "./controllers/dishController.js";
+import { deleteDishController, fetchAllDishesController, fetchDishByIdController, insertDishController, updateDishController } from "./controllers/dishController.js";
 import { createFeedbackController } from "./controllers/feedbackController.js";
 
 const router = express.Router();
@@ -9,6 +9,7 @@ router.get('/dishes',fetchAllDishesController);
 router.get('/dishes/:id',fetchDishByIdController);
 router.post('/createDish',insertDishController);
 router.put('/updateDish/:id',updateDishController);
+router.delete('/deleteDish/:id',deleteDishController)
 
 //Feedback routes
 router.post('/feedback',createFeedbackController);

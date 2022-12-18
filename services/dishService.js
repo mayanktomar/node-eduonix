@@ -21,3 +21,8 @@ export async function updateDish(id,updateData) {
   const updatedDish = await Dishes.updateOne({_id:id},updateData);
   return updatedDish;
 }
+
+export async function deleteDish(id) {
+  const deletedDish = await Dishes.deleteOne({_id:id});
+  return deletedDish;
+}

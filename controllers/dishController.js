@@ -1,4 +1,4 @@
-import { fetchAllDishes, fetchDishById, insertDish, updateDish } from "../services/dishService.js";
+import { deleteDish, fetchAllDishes, fetchDishById, insertDish, updateDish } from "../services/dishService.js";
 
 export async function fetchAllDishesController (req,res) {
   try {
@@ -39,6 +39,17 @@ export async function updateDishController (req,res) {
   } catch (err) {
     console.log(err);
     return res.status(500).send("Error while updating the dish into database");
+  }
+}
+
+export async function deleteDishController (req,res) {
+  const id = req.params.id;
+  try {
+    const deletedDish = await deleteDish(id);
+    return res.status(200).json(deletedDish);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send("Error while deleting the dish");
   }
 }
 
