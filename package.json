@@ -4,8 +4,11 @@
   "description": "This is project for learning purpose",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "author": "Mayank Tomar",
   "license": "ISC",
